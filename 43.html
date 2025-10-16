@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Transparency and Control Tools</title>
+<title>Each Act of Resistance Matters</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
@@ -74,51 +74,52 @@
             font-size: 14px;
             color: #666;
         }
-        .tools-container {
+        .resistance-points {
             display: flex;
-            gap: 30px;
+            flex-direction: column;
+            gap: 24px;
             margin-top: 20px;
         }
-        .tool-card {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 25px;
-            width: calc(33.33% - 20px);
+        .resistance-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
         }
-        .tool-icon {
-            width: 60px;
-            height: 60px;
+        .resistance-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: rgba(255, 62, 0, 0.2);
-            border-radius: 50%;
-            font-size: 28px;
+            border-radius: 10px;
+            font-size: 20px;
             color: #ff3e00;
-            margin-bottom: 20px;
         }
-        .tool-name {
-            font-size: 24px;
+        .resistance-content {
+            flex: 1;
+        }
+        .resistance-title {
+            font-size: 22px;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             color: #ffffff;
         }
-        .tool-description {
-            font-size: 16px;
+        .resistance-description {
+            font-size: 18px;
             color: #b0b0b0;
-            line-height: 1.5;
+            line-height: 1.4;
         }
-        .tool-feature {
-            display: flex;
-            align-items: center;
-            margin-top: 15px;
-            font-size: 14px;
-            color: #dddddd;
-        }
-        .feature-icon {
+        .key-quote {
+            font-size: 24px;
+            font-weight: 600;
+            font-style: italic;
             color: #ff3e00;
-            margin-right: 8px;
-            font-size: 12px;
+            opacity: 0.9;
+            margin: 30px 0;
+            max-width: 90%;
+            line-height: 1.4;
         }
     </style>
 </head>
@@ -127,63 +128,39 @@
 <div class="grid-pattern"></div>
 <div class="circle-accent"></div>
 <div class="content-wrapper">
-<h1 class="slide-title">Transparency and Control Tools</h1>
+<h1 class="slide-title">Each Act of Resistance Matters</h1>
 <p class="intro-text">
-    Open-source privacy tools built around user trust rather than surveillance—alternatives that put control back in people's hands
+    Every algorithm represents a value system. Every pushback reaffirms human agency over automated decisions.
 </p>
-<div class="tools-container">
-<div class="tool-card">
-<div class="tool-icon">
-<i class="fas fa-comment-alt"></i>
+<div class="key-quote">
+    Systems have no ethics, but people do.
 </div>
-<h3 class="tool-name">Signal</h3>
-<p class="tool-description">
-    End-to-end encrypted messaging app that prevents even its developers from reading your messages.
-</p>
-<div class="tool-feature">
-<i class="fas fa-check feature-icon"></i> Open-source code anyone can inspect
+<div class="resistance-points">
+<div class="resistance-item">
+<div class="resistance-icon">
+<i class="fas fa-code"></i>
 </div>
-<div class="tool-feature">
-<i class="fas fa-check feature-icon"></i> No data collection or tracking
-</div>
-<div class="tool-feature">
-<i class="fas fa-check feature-icon"></i> Regularly audited security
+<div class="resistance-content">
+<h3 class="resistance-title">Values Embedded in Code</h3>
+<p class="resistance-description">Every algorithm reflects the priorities, assumptions, and biases of its creators, making technology inherently value-laden.</p>
 </div>
 </div>
-<div class="tool-card">
-<div class="tool-icon">
-<i class="fas fa-envelope"></i>
+<div class="resistance-item">
+<div class="resistance-icon">
+<i class="fas fa-balance-scale"></i>
 </div>
-<h3 class="tool-name">ProtonMail</h3>
-<p class="tool-description">
-    Encrypted email service that shields your communications from surveillance and data mining.
-</p>
-<div class="tool-feature">
-<i class="fas fa-check feature-icon"></i> End-to-end encrypted messages
-</div>
-<div class="tool-feature">
-<i class="fas fa-check feature-icon"></i> Zero-access encryption for attachments
-</div>
-<div class="tool-feature">
-<i class="fas fa-check feature-icon"></i> No IP logging or ad tracking
+<div class="resistance-content">
+<h3 class="resistance-title">No Neutral Systems</h3>
+<p class="resistance-description">The myth of "objective" technology masks human decisions. Resisting reminds us that systems are built with specific goals in mind.</p>
 </div>
 </div>
-<div class="tool-card">
-<div class="tool-icon">
-<i class="fas fa-globe"></i>
+<div class="resistance-item">
+<div class="resistance-icon">
+<i class="fas fa-hand-paper"></i>
 </div>
-<h3 class="tool-name">Tor Browser</h3>
-<p class="tool-description">
-    Browser designed for anonymity, routing traffic through multiple servers to mask identity, location.
-</p>
-<div class="tool-feature">
-<i class="fas fa-check feature-icon"></i> Anonymizes web traffic
-</div>
-<div class="tool-feature">
-<i class="fas fa-check feature-icon"></i> Prevents tracking across sites
-</div>
-<div class="tool-feature">
-<i class="fas fa-check feature-icon"></i> Community-driven development
+<div class="resistance-content">
+<h3 class="resistance-title">Small Acts, Systemic Impact</h3>
+<p class="resistance-description">Every choice to question, opt out, or demand transparency creates ripple effects that shape the future of technology.</p>
 </div>
 </div>
 </div>

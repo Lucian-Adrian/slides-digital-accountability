@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Right to Repair Movement</title>
+<title>Transparency and Control Tools</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
@@ -35,6 +35,13 @@
             font-weight: 800;
             margin-bottom: 30px;
             color: #ffffff;
+        }
+        .intro-text {
+            font-size: 22px;
+            line-height: 1.4;
+            margin-bottom: 40px;
+            max-width: 90%;
+            color: #b0b0b0;
         }
         .grid-pattern {
             position: absolute;
@@ -67,56 +74,51 @@
             font-size: 14px;
             color: #666;
         }
-        .content-box {
+        .tools-container {
             display: flex;
+            gap: 30px;
             margin-top: 20px;
-            gap: 40px;
         }
-        .left-column {
-            flex: 1;
+        .tool-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 25px;
+            width: calc(33.33% - 20px);
         }
-        .right-column {
-            flex: 1;
-        }
-        .content-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            border-radius: 8px;
-            background-color: rgba(255, 62, 0, 0.2);
-            color: #ff3e00;
-            margin-right: 15px;
-            font-size: 18px;
-        }
-        .content-item {
+        .tool-icon {
+            width: 60px;
+            height: 60px;
             display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 62, 0, 0.2);
+            border-radius: 50%;
+            font-size: 28px;
+            color: #ff3e00;
+            margin-bottom: 20px;
         }
-        .content-text h3 {
-            font-size: 22px;
+        .tool-name {
+            font-size: 24px;
             font-weight: 700;
-            margin: 0 0 8px 0;
+            margin-bottom: 12px;
             color: #ffffff;
         }
-        .content-text p {
+        .tool-description {
             font-size: 16px;
+            color: #b0b0b0;
             line-height: 1.5;
-            margin: 0;
-            color: #b0b0b0;
         }
-        .intro-text {
-            font-size: 22px;
-            line-height: 1.4;
-            margin-bottom: 30px;
-            color: #b0b0b0;
-            max-width: 90%;
+        .tool-feature {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #dddddd;
         }
-        .rossmann-highlight {
+        .feature-icon {
             color: #ff3e00;
-            font-weight: 600;
+            margin-right: 8px;
+            font-size: 12px;
         }
     </style>
 </head>
@@ -125,49 +127,63 @@
 <div class="grid-pattern"></div>
 <div class="circle-accent"></div>
 <div class="content-wrapper">
-<h1 class="slide-title">Right to Repair Movement</h1>
+<h1 class="slide-title">Transparency and Control Tools</h1>
 <p class="intro-text">
-    Advocates like <span class="rossmann-highlight">Louis Rossmann</span> fight for consumer rights to control, modify, and repair their own devices without manufacturer restrictions.
+    Open-source privacy tools built around user trust rather than surveillance—alternatives that put control back in people's hands
 </p>
-<div class="content-box">
-<div class="left-column">
-<div class="content-item">
-<div class="content-icon">
-<i class="fas fa-tools"></i>
+<div class="tools-container">
+<div class="tool-card">
+<div class="tool-icon">
+<i class="fas fa-comment-alt"></i>
 </div>
-<div class="content-text">
-<h3>Independent Repair</h3>
-<p>Rossmann's repair shop became a symbol of resistance against manufacturers' repair monopolies and their "authorized service providers" model.</p>
+<h3 class="tool-name">Signal</h3>
+<p class="tool-description">
+    End-to-end encrypted messaging app that prevents even its developers from reading your messages.
+</p>
+<div class="tool-feature">
+<i class="fas fa-check feature-icon"></i> Open-source code anyone can inspect
 </div>
+<div class="tool-feature">
+<i class="fas fa-check feature-icon"></i> No data collection or tracking
 </div>
-<div class="content-item">
-<div class="content-icon">
-<i class="fas fa-video"></i>
-</div>
-<div class="content-text">
-<h3>Educational Advocacy</h3>
-<p>Through detailed YouTube repair videos, Rossmann exposes anti-consumer practices and educates millions on technical repair skills.</p>
-</div>
+<div class="tool-feature">
+<i class="fas fa-check feature-icon"></i> Regularly audited security
 </div>
 </div>
-<div class="right-column">
-<div class="content-item">
-<div class="content-icon">
-<i class="fas fa-gavel"></i>
+<div class="tool-card">
+<div class="tool-icon">
+<i class="fas fa-envelope"></i>
 </div>
-<div class="content-text">
-<h3>Legislative Reform</h3>
-<p>Testified before lawmakers, supporting bills that would require manufacturers to provide repair documentation and parts to owners.</p>
+<h3 class="tool-name">ProtonMail</h3>
+<p class="tool-description">
+    Encrypted email service that shields your communications from surveillance and data mining.
+</p>
+<div class="tool-feature">
+<i class="fas fa-check feature-icon"></i> End-to-end encrypted messages
+</div>
+<div class="tool-feature">
+<i class="fas fa-check feature-icon"></i> Zero-access encryption for attachments
+</div>
+<div class="tool-feature">
+<i class="fas fa-check feature-icon"></i> No IP logging or ad tracking
 </div>
 </div>
-<div class="content-item">
-<div class="content-icon">
-<i class="fas fa-hand-holding"></i>
+<div class="tool-card">
+<div class="tool-icon">
+<i class="fas fa-globe"></i>
 </div>
-<div class="content-text">
-<h3>Core Principle</h3>
-<p>If you bought it, you should own it—completely. Control over our devices mirrors digital autonomy in all spheres.</p>
+<h3 class="tool-name">Tor Browser</h3>
+<p class="tool-description">
+    Browser designed for anonymity, routing traffic through multiple servers to mask identity, location.
+</p>
+<div class="tool-feature">
+<i class="fas fa-check feature-icon"></i> Anonymizes web traffic
 </div>
+<div class="tool-feature">
+<i class="fas fa-check feature-icon"></i> Prevents tracking across sites
+</div>
+<div class="tool-feature">
+<i class="fas fa-check feature-icon"></i> Community-driven development
 </div>
 </div>
 </div>

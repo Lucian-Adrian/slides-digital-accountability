@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Public Pressure Creates Change</title>
+<title>Right to Repair Movement</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
@@ -67,58 +67,56 @@
             font-size: 14px;
             color: #666;
         }
-        .content-container {
+        .content-box {
             display: flex;
-            flex-direction: column;
+            margin-top: 20px;
             gap: 40px;
         }
-        .main-text {
-            font-size: 24px;
-            line-height: 1.5;
-            color: #b0b0b0;
-            margin-bottom: 40px;
-            max-width: 90%;
-        }
-        .highlight {
-            color: #ff3e00;
-            font-weight: 600;
-        }
-        .timeline {
-            display: flex;
-            gap: 30px;
-            margin-top: 20px;
-        }
-        .timeline-item {
+        .left-column {
             flex: 1;
-            position: relative;
-            padding: 25px;
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
         }
-        .timeline-icon {
-            position: absolute;
-            top: -20px;
-            left: 25px;
-            width: 40px;
-            height: 40px;
+        .right-column {
+            flex: 1;
+        }
+        .content-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
             background-color: rgba(255, 62, 0, 0.2);
             color: #ff3e00;
-            border-radius: 50%;
+            margin-right: 15px;
+            font-size: 18px;
+        }
+        .content-item {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 18px;
+            align-items: flex-start;
+            margin-bottom: 25px;
         }
-        .timeline-title {
-            font-size: 18px;
+        .content-text h3 {
+            font-size: 22px;
             font-weight: 700;
-            margin-bottom: 10px;
-            padding-top: 10px;
+            margin: 0 0 8px 0;
+            color: #ffffff;
         }
-        .timeline-description {
-            font-size: 14px;
+        .content-text p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 0;
             color: #b0b0b0;
+        }
+        .intro-text {
+            font-size: 22px;
             line-height: 1.4;
+            margin-bottom: 30px;
+            color: #b0b0b0;
+            max-width: 90%;
+        }
+        .rossmann-highlight {
+            color: #ff3e00;
+            font-weight: 600;
         }
     </style>
 </head>
@@ -127,45 +125,56 @@
 <div class="grid-pattern"></div>
 <div class="circle-accent"></div>
 <div class="content-wrapper">
-<h1 class="slide-title">Public Pressure Creates Change</h1>
-<div class="content-container">
-<p class="main-text">
-                Germany's block of the Chat Control proposal represents a <span class="highlight">rare victory</span> for digital rights, achieved through coordinated civic action.
-            </p>
-<div class="timeline">
-<div class="timeline-item">
-<div class="timeline-icon">
-<i class="fas fa-bullhorn"></i>
+<h1 class="slide-title">Right to Repair Movement</h1>
+<p class="intro-text">
+    Advocates like <span class="rossmann-highlight">Louis Rossmann</span> fight for consumer rights to control, modify, and repair their own devices without manufacturer restrictions.
+</p>
+<div class="content-box">
+<div class="left-column">
+<div class="content-item">
+<div class="content-icon">
+<i class="fas fa-tools"></i>
 </div>
-<h3 class="timeline-title">Media Attention</h3>
-<p class="timeline-description">
-                        Journalists across Germany extensively covered the proposal's privacy implications, elevating public awareness beyond tech circles
-                    </p>
+<div class="content-text">
+<h3>Independent Repair</h3>
+<p>Rossmann's repair shop became a symbol of resistance against manufacturers' repair monopolies and their "authorized service providers" model.</p>
 </div>
-<div class="timeline-item">
-<div class="timeline-icon">
-<i class="fas fa-users"></i>
 </div>
-<h3 class="timeline-title">Civil Society Mobilization</h3>
-<p class="timeline-description">
-                        Digital rights organizations coordinated campaigns, petitions, and expert testimony to present a unified opposition
-                    </p>
+<div class="content-item">
+<div class="content-icon">
+<i class="fas fa-video"></i>
 </div>
-<div class="timeline-item">
-<div class="timeline-icon">
+<div class="content-text">
+<h3>Educational Advocacy</h3>
+<p>Through detailed YouTube repair videos, Rossmann exposes anti-consumer practices and educates millions on technical repair skills.</p>
+</div>
+</div>
+</div>
+<div class="right-column">
+<div class="content-item">
+<div class="content-icon">
 <i class="fas fa-gavel"></i>
 </div>
-<h3 class="timeline-title">Political Response</h3>
-<p class="timeline-description">
-                        German officials responded directly to public concern, publicly acknowledging civil resistance as a factor in their decision
-                    </p>
+<div class="content-text">
+<h3>Legislative Reform</h3>
+<p>Testified before lawmakers, supporting bills that would require manufacturers to provide repair documentation and parts to owners.</p>
+</div>
+</div>
+<div class="content-item">
+<div class="content-icon">
+<i class="fas fa-hand-holding"></i>
+</div>
+<div class="content-text">
+<h3>Core Principle</h3>
+<p>If you bought it, you should own it—completely. Control over our devices mirrors digital autonomy in all spheres.</p>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div class="footer">
-        Digital Accountability | October 2025
-    </div>
+    Digital Accountability | October 2025
+</div>
 </div>
 </body>
 </html>
