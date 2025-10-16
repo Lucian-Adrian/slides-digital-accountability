@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Chain of Compliance</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            background-color: #0a0a0a;
+            color: white;
+        }
+        .slide-container {
+            width: 100%;
+            height: 720px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .content-wrapper {
+            padding: 80px 100px;
+            z-index: 10;
+        }
+        .slide-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+        .intro-text {
+            font-size: 22px;
+            line-height: 1.4;
+            margin-bottom: 40px;
+            max-width: 90%;
+            color: #b0b0b0;
+        }
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: 1;
+            background-size: 20px 20px;
+            background-image: 
+                linear-gradient(to right, #333 1px, transparent 1px),
+                linear-gradient(to bottom, #333 1px, transparent 1px);
+        }
+        .circle-accent {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            bottom: -200px;
+            left: -100px;
+            background-color: #ff3e00;
+            opacity: 0.1;
+            z-index: 2;
+        }
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            left: 100px;
+            font-size: 14px;
+            color: #666;
+        }
+        .chain-container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .chain-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .chain-icon {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 62, 0, 0.2);
+            border-radius: 10px;
+            font-size: 24px;
+            color: #ff3e00;
+        }
+        .chain-content {
+            flex: 1;
+            border-left: 2px solid rgba(255, 62, 0, 0.3);
+            padding-left: 20px;
+        }
+        .chain-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+        .chain-quote {
+            font-size: 18px;
+            color: #ff3e00;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        .chain-description {
+            font-size: 16px;
+            color: #b0b0b0;
+            line-height: 1.4;
+        }
+        .conclusion {
+            margin-top: 40px;
+            font-size: 20px;
+            line-height: 1.4;
+            padding: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="grid-pattern"></div>
+<div class="circle-accent"></div>
+<div class="content-wrapper">
+<h1 class="slide-title">No Villain, Just Compliance</h1>
+<p class="intro-text">
+    When responsibility diffuses across a chain of actors, accountability becomes invisible
+</p>
+<div class="chain-container">
+<div class="chain-item">
+<div class="chain-icon">
+<i class="fas fa-landmark"></i>
+</div>
+<div class="chain-content">
+<h3 class="chain-title">Politicians</h3>
+<p class="chain-quote">"We're protecting kids."</p>
+<p class="chain-description">Create laws with noble goals but questionable methods, then pass implementation responsibility downward</p>
+</div>
+</div>
+<div class="chain-item">
+<div class="chain-icon">
+<i class="fas fa-building"></i>
+</div>
+<div class="chain-content">
+<h3 class="chain-title">Companies</h3>
+<p class="chain-quote">"We're following the law."</p>
+<p class="chain-description">Claim they have no choice but to comply, then delegate the technical implementation to developers</p>
+</div>
+</div>
+<div class="chain-item">
+<div class="chain-icon">
+<i class="fas fa-code"></i>
+</div>
+<div class="chain-content">
+<h3 class="chain-title">Developers</h3>
+<p class="chain-quote">"We're just implementing the feature."</p>
+<p class="chain-description">Build the surveillance tools while distancing themselves from policy implications and consequences</p>
+</div>
+</div>
+</div>
+<div class="conclusion">
+
+</div>
+</div>
+<div class="footer">
+    Digital Accountability | October 2025
+</div>
+</div>
+</body>
+</html>

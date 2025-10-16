@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digital Accountability - Enforcement Timeline</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            background-color: #0a0a0a;
+            color: white;
+        }
+        .slide-container {
+            width: 100%;
+            height: 720px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .content-wrapper {
+            padding: 80px 100px;
+            z-index: 10;
+        }
+        .slide-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: 1;
+            background-size: 20px 20px;
+            background-image: 
+                linear-gradient(to right, #333 1px, transparent 1px),
+                linear-gradient(to bottom, #333 1px, transparent 1px);
+        }
+        .circle-accent {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            bottom: -200px;
+            left: -100px;
+            background-color: #ff3e00;
+            opacity: 0.1;
+            z-index: 2;
+        }
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            left: 100px;
+            font-size: 14px;
+            color: #666;
+        }
+        .timeline-container {
+            display: flex;
+            margin-top: 50px;
+        }
+        .timeline-item {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            padding: 0 15px;
+        }
+        .timeline-item:not(:last-child):after {
+            content: "";
+            position: absolute;
+            top: 40px;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background-color: #444;
+            z-index: 3;
+        }
+        .timeline-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+            background-color: rgba(255, 62, 0, 0.2);
+            border-radius: 50%;
+            font-size: 32px;
+            color: #ff3e00;
+            position: relative;
+            z-index: 5;
+        }
+        .timeline-date {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        .timeline-description {
+            font-size: 16px;
+            color: #b0b0b0;
+            line-height: 1.4;
+        }
+        .intro-text {
+            font-size: 22px;
+            line-height: 1.4;
+            margin-bottom: 30px;
+            max-width: 90%;
+            color: #b0b0b0;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="grid-pattern"></div>
+<div class="circle-accent"></div>
+<div class="content-wrapper">
+<h1 class="slide-title">Enforcement Timeline</h1>
+<p class="intro-text">
+                Full enforcement of the EU AI Act follows a gradual implementation phase, giving organizations time to adapt to new requirements
+            </p>
+<div class="timeline-container">
+<div class="timeline-item">
+<div class="timeline-icon">
+<i class="fas fa-file-signature"></i>
+</div>
+<div class="timeline-date">August 2024</div>
+<p class="timeline-description">AI Act enters into force</p>
+</div>
+<div class="timeline-item">
+<div class="timeline-icon">
+<i class="fas fa-ban"></i>
+</div>
+<div class="timeline-date">Early 2025</div>
+<p class="timeline-description">Prohibited AI systems must cease operation</p>
+</div>
+<div class="timeline-item">
+<div class="timeline-icon">
+<i class="fas fa-clipboard-check"></i>
+</div>
+<div class="timeline-date">Mid 2025</div>
+<p class="timeline-description">Documentation and compliance preparations required</p>
+</div>
+<div class="timeline-item">
+<div class="timeline-icon">
+<i class="fas fa-gavel"></i>
+</div>
+<div class="timeline-date">2026-2027</div>
+<p class="timeline-description">Full enforcement with penalties for non-compliance</p>
+</div>
+</div>
+</div>
+<div class="footer">
+            Digital Accountability | October 2025
+        </div>
+</div>
+</body>
+</html>

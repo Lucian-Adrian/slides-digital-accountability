@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digital Accountability - Overview</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            background-color: #0a0a0a;
+            color: white;
+        }
+        body, .slide-container {
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  padding: 60px 100px;
+}
+
+        .slide-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+        
+        .intro-text {
+            font-size: 22px;
+            line-height: 1.4;
+            margin-bottom: 40px;
+            max-width: 90%;
+            color: #b0b0b0;
+        }
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: 1;
+            background-size: 20px 20px;
+            background-image: 
+                linear-gradient(to right, #333 1px, transparent 1px),
+                linear-gradient(to bottom, #333 1px, transparent 1px);
+        }
+        .circle-accent {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            bottom: -200px;
+            left: -100px;
+            background-color: #ff3e00;
+            opacity: 0.1;
+            z-index: 2;
+        }
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            left: 100px;
+            font-size: 14px;
+            color: #666;
+        }
+        .acts-container {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .act-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        .act-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 62, 0, 0.2);
+            border-radius: 10px;
+            font-size: 20px;
+            color: #ff3e00;
+        }
+        .act-content {
+            flex: 1;
+        }
+        .act-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+        .act-number {
+            display: inline-block;
+            background-color: #ff3e00;
+            color: #000;
+            border-radius: 50%;
+            width: 26px;
+            height: 26px;
+            text-align: center;
+            line-height: 26px;
+            margin-right: 10px;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .act-description {
+            font-size: 16px;
+            color: #b0b0b0;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="grid-pattern"></div>
+<div class="circle-accent"></div>
+<div class="content-wrapper">
+<h1 class="slide-title">Overview</h1>
+<p class="intro-text">
+                How laws, code, and resistance shape our digital privacy, from 5 perspectives
+            </p>
+<div class="acts-container">
+<div class="act-item">
+<div class="act-icon">
+<i class="fas fa-eye"></i>
+</div>
+<div class="act-content">
+<h3 class="act-title"><span class="act-number">I</span>Chat Control</h3>
+<p class="act-description">Surveillance proposals, warnings from tech leaders, and public resistance</p>
+</div>
+</div>
+<div class="act-item">
+<div class="act-icon">
+<i class="fas fa-robot"></i>
+</div>
+<div class="act-content">
+<h3 class="act-title"><span class="act-number">II</span>Algorithmic Power</h3>
+<p class="act-description">When systems decide, who answers? Cases of bias, harm, and diffused responsibility</p>
+</div>
+</div>
+<div class="act-item">
+<div class="act-icon">
+<i class="fas fa-gavel"></i>
+</div>
+<div class="act-content">
+<h3 class="act-title"><span class="act-number">III</span>Legal Responses</h3>
+<p class="act-description">Regulatory frameworks struggling to catch up with technology's rapid evolution</p>
+</div>
+</div>
+<div class="act-item">
+<div class="act-icon">
+<i class="fas fa-fist-raised"></i>
+</div>
+<div class="act-content">
+<h3 class="act-title"><span class="act-number">IV</span>Resistance</h3>
+<p class="act-description">Whistleblowers, privacy platforms, and citizen movements reclaiming control</p>
+</div>
+</div>
+<div class="act-item">
+<div class="act-icon">
+<i class="fas fa-question"></i>
+</div>
+<div class="act-content">
+<h3 class="act-title"><span class="act-number">V</span>The Human Question</h3>
+<p class="act-description">Core ethical challenges and the path to maintaining humanity in digital systems</p>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+            Digital Accountability | October 2025
+        </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson: Code Can Discriminate</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            background-color: #0a0a0a;
+            color: white;
+        }
+        .slide-container {
+            width: 100%;
+            height: 720px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .content-wrapper {
+            padding: 80px 100px;
+            z-index: 10;
+        }
+        .slide-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+        .intro-text {
+            font-size: 22px;
+            line-height: 1.4;
+            margin-bottom: 40px;
+            max-width: 90%;
+            color: #b0b0b0;
+        }
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: 1;
+            background-size: 20px 20px;
+            background-image: 
+                linear-gradient(to right, #333 1px, transparent 1px),
+                linear-gradient(to bottom, #333 1px, transparent 1px);
+        }
+        .circle-accent {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            bottom: -200px;
+            left: -100px;
+            background-color: #ff3e00;
+            opacity: 0.1;
+            z-index: 2;
+        }
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            left: 100px;
+            font-size: 14px;
+            color: #666;
+        }
+        .lesson-container {
+            display: flex;
+            gap: 50px;
+            margin-top: 20px;
+        }
+        .lesson-content {
+            flex: 1;
+        }
+        .lesson-highlight {
+            color: #ff3e00;
+            font-weight: 700;
+        }
+        .point-container {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-top: 30px;
+        }
+        .point-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        .point-icon {
+            min-width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 62, 0, 0.2);
+            border-radius: 50%;
+            font-size: 18px;
+            color: #ff3e00;
+        }
+        .point-text {
+            font-size: 20px;
+            line-height: 1.4;
+            color: #d0d0d0;
+        }
+        .code-visual {
+            min-width: 300px;
+            height: 300px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-left: 3px solid #ff3e00;
+        }
+        .code-lines {
+            font-family: 'Roboto Mono', monospace;
+            color: #b0b0b0;
+            font-size: 14px;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+        .code-line {
+            margin-bottom: 5px;
+        }
+        .function-name {
+            color: #4d9efd;
+        }
+        .string-value {
+            color: #ffcc00;
+        }
+        .comment {
+            color: #666;
+        }
+        .symbol {
+            color: #ff3e00;
+        }
+        .inequality-icon {
+            font-size: 64px;
+            color: #ff3e00;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="grid-pattern"></div>
+<div class="circle-accent"></div>
+<div class="content-wrapper">
+<h1 class="slide-title">Lesson: Code can discriminate</h1>
+<p class="intro-text">
+    Technology reflects and amplifies human biases. What begins as <span class="lesson-highlight">"just an experiment"</span> shapes real-world outcomes and reinforces existing inequalities.
+</p>
+<div class="lesson-container">
+<div class="lesson-content">
+<div class="point-container">
+<div class="point-item">
+<div class="point-icon">
+<i class="fas fa-copy"></i>
+</div>
+<p class="point-text">
+                    Code written today becomes the foundation for systems that influence decisions tomorrow
+                </p>
+</div>
+<div class="point-item">
+<div class="point-icon">
+<i class="fas fa-database"></i>
+</div>
+<p class="point-text">
+                    Historical data contains historical biases — algorithms learn to replicate them
+                </p>
+</div>
+<div class="point-item">
+<div class="point-icon">
+<i class="fas fa-exclamation-triangle"></i>
+</div>
+<p class="point-text">
+                    "Experimental" systems affect real lives while remaining protected from accountability
+                </p>
+</div>
+<div class="point-item">
+<div class="point-icon">
+<i class="fas fa-balance-scale"></i>
+</div>
+<p class="point-text">
+                    Inequity becomes invisibly embedded in digital infrastructure, hardened into society
+                </p>
+</div>
+</div>
+</div>
+<div class="code-visual">
+<i class="fas fa-not-equal inequality-icon"></i>
+<div class="code-lines">
+<div class="code-line"><span class="comment">// Historical data bias becomes algorithm bias</span></div>
+<div class="code-line"><span class="function-name">function</span> evaluateCandidate<span class="symbol">(</span>resume<span class="symbol">) {</span></div>
+<div class="code-line"> <span class="comment">// Pattern matching against past "success"</span></div>
+<div class="code-line"> <span class="function-name">if</span> <span class="symbol">(</span>matchesHistoricalPattern<span class="symbol">(</span>resume<span class="symbol">)) {</span></div>
+<div class="code-line"> <span class="function-name">return</span> <span class="string-value">"High potential"</span><span class="symbol">;</span></div>
+<div class="code-line"> <span class="symbol">}</span> <span class="function-name">else</span> <span class="symbol">{</span></div>
+<div class="code-line"> <span class="function-name">return</span> <span class="string-value">"Not a good fit"</span><span class="symbol">;</span></div>
+<div class="code-line"> <span class="symbol">}</span></div>
+<div class="code-line"><span class="symbol">}</span></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+    Digital Accountability | Act II: When Systems Decide, Who Answers?
+</div>
+</div>
+</body>
+</html>

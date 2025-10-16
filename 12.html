@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nothing Is Permanent</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            background-color: #0a0a0a;
+            color: white;
+        }
+        .slide-container {
+            width: 100%;
+            height: 720px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .content-wrapper {
+            padding: 80px 100px;
+            z-index: 10;
+        }
+        .slide-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 40px;
+            color: #ffffff;
+        }
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: 1;
+            background-size: 20px 20px;
+            background-image: 
+                linear-gradient(to right, #333 1px, transparent 1px),
+                linear-gradient(to bottom, #333 1px, transparent 1px);
+        }
+        .circle-accent {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            bottom: -200px;
+            left: -100px;
+            background-color: #ff3e00;
+            opacity: 0.1;
+            z-index: 2;
+        }
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            left: 100px;
+            font-size: 14px;
+            color: #666;
+        }
+        .status-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 60px;
+        }
+        .status-box {
+            width: 45%;
+            padding: 30px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .status-current {
+            background-color: rgba(255, 62, 0, 0.1);
+            border: 2px solid rgba(255, 62, 0, 0.3);
+        }
+        .status-warning {
+            background-color: rgba(255, 204, 0, 0.1);
+            border: 2px solid rgba(255, 204, 0, 0.3);
+        }
+        .status-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .status-current .status-icon {
+            color: #ff3e00;
+        }
+        .status-warning .status-icon {
+            color: #ffcc00;
+        }
+        .status-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        .status-text {
+            font-size: 18px;
+            line-height: 1.5;
+            color: #b0b0b0;
+        }
+        .bottom-message {
+            font-size: 24px;
+            line-height: 1.5;
+            color: #ffffff;
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="grid-pattern"></div>
+<div class="circle-accent"></div>
+<div class="content-wrapper">
+<h1 class="slide-title">Nothing Is Permanent</h1>
+<div class="status-container">
+<div class="status-box status-current">
+<i class="fas fa-pause-circle status-icon"></i>
+<h3 class="status-title">Current Status: Paused</h3>
+<p class="status-text">The Chat Control proposal has been temporarily halted due to Germany's opposition and public pressure.</p>
+</div>
+<div class="status-box status-warning">
+<i class="fas fa-exclamation-triangle status-icon"></i>
+<h3 class="status-title">Not Defeated</h3>
+<p class="status-text">The law wasn't rejected – only stalled. New versions can emerge at any time.</p>
+</div>
+</div>
+<div class="bottom-message">
+<i class="fas fa-history"></i> Surveillance proposals rarely disappear permanently. They often return in new forms with fresh justifications.
+</div>
+</div>
+<div class="footer">
+    Digital Accountability | October 2025
+</div>
+</div>
+</body>
+</html>

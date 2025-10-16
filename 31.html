@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Transparency Obligations</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            background-color: #0a0a0a;
+            color: white;
+        }
+        .slide-container {
+            width: 100%;
+            height: 720px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .content-wrapper {
+            padding: 80px 100px;
+            z-index: 10;
+        }
+        .slide-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+        .intro-text {
+            font-size: 22px;
+            line-height: 1.4;
+            margin-bottom: 40px;
+            max-width: 90%;
+            color: #b0b0b0;
+        }
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: 1;
+            background-size: 20px 20px;
+            background-image: 
+                linear-gradient(to right, #333 1px, transparent 1px),
+                linear-gradient(to bottom, #333 1px, transparent 1px);
+        }
+        .circle-accent {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            bottom: -200px;
+            left: -100px;
+            background-color: #ff3e00;
+            opacity: 0.1;
+            z-index: 2;
+        }
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            left: 100px;
+            font-size: 14px;
+            color: #666;
+        }
+        .requirements-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .requirement-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        .requirement-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 62, 0, 0.2);
+            border-radius: 10px;
+            font-size: 22px;
+            color: #ff3e00;
+        }
+        .requirement-content {
+            flex: 1;
+        }
+        .requirement-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+        .requirement-description {
+            font-size: 18px;
+            color: #b0b0b0;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="grid-pattern"></div>
+<div class="circle-accent"></div>
+<div class="content-wrapper">
+<h1 class="slide-title">Transparency Obligations</h1>
+<p class="intro-text">
+    The EU AI Act requires companies to lift the veil on their AI systems, establishing clear accountability mechanisms.
+</p>
+<div class="requirements-container">
+<div class="requirement-item">
+<div class="requirement-icon">
+<i class="fas fa-file-alt"></i>
+</div>
+<div class="requirement-content">
+<h3 class="requirement-title">Documentation Requirements</h3>
+<p class="requirement-description">Companies must maintain detailed technical documentation explaining how their AI systems work and make decisions.</p>
+</div>
+</div>
+<div class="requirement-item">
+<div class="requirement-icon">
+<i class="fas fa-eye"></i>
+</div>
+<div class="requirement-content">
+<h3 class="requirement-title">Human Oversight</h3>
+<p class="requirement-description">High-risk AI systems must include human supervision capabilities, allowing operators to intervene, override, or disable the system when necessary.</p>
+</div>
+</div>
+<div class="requirement-item">
+<div class="requirement-icon">
+<i class="fas fa-exclamation-triangle"></i>
+</div>
+<div class="requirement-content">
+<h3 class="requirement-title">Risk Management</h3>
+<p class="requirement-description">Companies must implement risk assessment procedures and take measures to mitigate potential harms throughout the AI system lifecycle.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+    Digital Accountability | October 2025
+</div>
+</div>
+</body>
+</html>

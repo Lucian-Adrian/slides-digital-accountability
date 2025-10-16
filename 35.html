@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Bureaucratic Loop</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            background-color: #0a0a0a;
+            color: white;
+        }
+        .slide-container {
+            width: 100%;
+            height: 720px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .content-wrapper {
+            padding: 80px 100px;
+            z-index: 10;
+        }
+        .slide-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+        .intro-text {
+            font-size: 22px;
+            line-height: 1.4;
+            margin-bottom: 40px;
+            max-width: 90%;
+            color: #b0b0b0;
+        }
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: 1;
+            background-size: 20px 20px;
+            background-image: 
+                linear-gradient(to right, #333 1px, transparent 1px),
+                linear-gradient(to bottom, #333 1px, transparent 1px);
+        }
+        .circle-accent {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            bottom: -200px;
+            left: -100px;
+            background-color: #ff3e00;
+            opacity: 0.1;
+            z-index: 2;
+        }
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            left: 100px;
+            font-size: 14px;
+            color: #666;
+        }
+        .loop-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            position: relative;
+        }
+        .loop-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            position: relative;
+        }
+        .loop-icon {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 62, 0, 0.2);
+            border-radius: 50%;
+            font-size: 24px;
+            color: #ff3e00;
+        }
+        .loop-content {
+            flex: 1;
+        }
+        .loop-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+        .loop-description {
+            font-size: 17px;
+            color: #b0b0b0;
+            line-height: 1.4;
+        }
+        .loop-connector {
+            position: absolute;
+            left: 30px;
+            top: 55px;
+            height: calc(100% - 20px);
+            width: 2px;
+            background-color: rgba(255, 62, 0, 0.3);
+            z-index: 1;
+        }
+        .loop-arrow {
+            position: absolute;
+            left: 22px;
+            bottom: -25px;
+            color: rgba(255, 62, 0, 0.7);
+            font-size: 18px;
+            transform: rotate(-90deg);
+        }
+        .loop-note {
+            position: absolute;
+            right: 80px;
+            bottom: -20px;
+            font-style: italic;
+            color: #666;
+            font-size: 16px;
+            max-width: 300px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="grid-pattern"></div>
+<div class="circle-accent"></div>
+<div class="content-wrapper">
+<h1 class="slide-title">The Bureaucratic Loop</h1>
+<p class="intro-text">
+    Responsibility becomes a circular problem with no clear resolution point
+</p>
+<div class="loop-container">
+<div class="loop-connector"></div>
+<div class="loop-item">
+<div class="loop-icon">
+<i class="fas fa-book"></i>
+</div>
+<div class="loop-content">
+<h3 class="loop-title">Vague Laws</h3>
+<p class="loop-description">Legislators write ambiguous regulations with technical gaps and undefined responsibilities</p>
+</div>
+</div>
+<div class="loop-item">
+<div class="loop-icon">
+<i class="fas fa-cogs"></i>
+</div>
+<div class="loop-content">
+<h3 class="loop-title">Automated Compliance</h3>
+<p class="loop-description">Companies build systems that satisfy the letter of the law while prioritizing efficiency</p>
+</div>
+</div>
+<div class="loop-item">
+<div class="loop-icon">
+<i class="fas fa-exclamation-triangle"></i>
+</div>
+<div class="loop-content">
+<h3 class="loop-title">System Failures</h3>
+<p class="loop-description">Automated systems make mistakes, causing real harm to people with no clear recourse</p>
+</div>
+</div>
+<div class="loop-item">
+<div class="loop-icon">
+<i class="fas fa-exchange-alt"></i>
+</div>
+<div class="loop-content">
+<h3 class="loop-title">Blame Shifting</h3>
+<p class="loop-description">When questioned: "The algorithm made the decision" — No individual accepts responsibility</p>
+</div>
+</div>
+<div class="loop-arrow">
+<i class="fas fa-redo-alt"></i>
+</div>
+<div class="loop-note">
+        
+    </div>
+</div>
+</div>
+<div class="footer">
+    Digital Accountability | October 2025
+</div>
+</div>
+</body>
+</html>

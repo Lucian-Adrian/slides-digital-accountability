@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Public Pressure Creates Change</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            background-color: #0a0a0a;
+            color: white;
+        }
+        .slide-container {
+            width: 100%;
+            height: 720px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .content-wrapper {
+            padding: 80px 100px;
+            z-index: 10;
+        }
+        .slide-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+        .grid-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            z-index: 1;
+            background-size: 20px 20px;
+            background-image: 
+                linear-gradient(to right, #333 1px, transparent 1px),
+                linear-gradient(to bottom, #333 1px, transparent 1px);
+        }
+        .circle-accent {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            bottom: -200px;
+            left: -100px;
+            background-color: #ff3e00;
+            opacity: 0.1;
+            z-index: 2;
+        }
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            left: 100px;
+            font-size: 14px;
+            color: #666;
+        }
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        .main-text {
+            font-size: 24px;
+            line-height: 1.5;
+            color: #b0b0b0;
+            margin-bottom: 40px;
+            max-width: 90%;
+        }
+        .highlight {
+            color: #ff3e00;
+            font-weight: 600;
+        }
+        .timeline {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .timeline-item {
+            flex: 1;
+            position: relative;
+            padding: 25px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        .timeline-icon {
+            position: absolute;
+            top: -20px;
+            left: 25px;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 62, 0, 0.2);
+            color: #ff3e00;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+        }
+        .timeline-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            padding-top: 10px;
+        }
+        .timeline-description {
+            font-size: 14px;
+            color: #b0b0b0;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="grid-pattern"></div>
+<div class="circle-accent"></div>
+<div class="content-wrapper">
+<h1 class="slide-title">Public Pressure Creates Change</h1>
+<div class="content-container">
+<p class="main-text">
+                Germany's block of the Chat Control proposal represents a <span class="highlight">rare victory</span> for digital rights, achieved through coordinated civic action.
+            </p>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-icon">
+<i class="fas fa-bullhorn"></i>
+</div>
+<h3 class="timeline-title">Media Attention</h3>
+<p class="timeline-description">
+                        Journalists across Germany extensively covered the proposal's privacy implications, elevating public awareness beyond tech circles
+                    </p>
+</div>
+<div class="timeline-item">
+<div class="timeline-icon">
+<i class="fas fa-users"></i>
+</div>
+<h3 class="timeline-title">Civil Society Mobilization</h3>
+<p class="timeline-description">
+                        Digital rights organizations coordinated campaigns, petitions, and expert testimony to present a unified opposition
+                    </p>
+</div>
+<div class="timeline-item">
+<div class="timeline-icon">
+<i class="fas fa-gavel"></i>
+</div>
+<h3 class="timeline-title">Political Response</h3>
+<p class="timeline-description">
+                        German officials responded directly to public concern, publicly acknowledging civil resistance as a factor in their decision
+                    </p>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+        Digital Accountability | October 2025
+    </div>
+</div>
+</body>
+</html>

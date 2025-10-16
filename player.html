@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Accountability - Presentation Player</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            overflow: hidden;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #player-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0a0a0a;
+        }
+
+        #slide-frame {
+            width: 1280px;
+            height: 720px;
+            border: none;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            background-color: #0a0a0a;
+            transition: opacity 0.3s ease;
+        }
+
+        #slide-frame.transitioning {
+            opacity: 0;
+        }
+
+        /* Controls overlay */
+        #controls {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 25px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        #player-container:hover #controls,
+        #controls:hover {
+            opacity: 1;
+        }
+
+        #controls.visible {
+            opacity: 1;
+        }
+
+        .control-btn {
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .control-btn:hover {
+            background-color: rgba(255, 62, 0, 0.2);
+            color: #ff3e00;
+        }
+
+        .control-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .control-btn:disabled:hover {
+            background: none;
+            color: #ffffff;
+        }
+
+        #slide-counter {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            min-width: 80px;
+            text-align: center;
+            user-select: none;
+        }
+
+        #progress-bar-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: rgba(255, 255, 255, 0.1);
+            z-index: 999;
+        }
+
+        #progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #ff3e00, #ff6b00);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Keyboard shortcuts hint */
+        #shortcuts-hint {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background-color: rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 25px;
+            border-radius: 12px;
+            color: #ffffff;
+            font-size: 13px;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            pointer-events: none;
+        }
+
+        #shortcuts-hint.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        #shortcuts-hint h3 {
+            font-size: 14px;
+            margin-bottom: 12px;
+            color: #ff3e00;
+            font-weight: 700;
+        }
+
+        #shortcuts-hint ul {
+            list-style: none;
+            line-height: 1.8;
+        }
+
+        #shortcuts-hint kbd {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .help-btn {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background-color: rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 1001;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .help-btn:hover {
+            background-color: rgba(255, 62, 0, 0.2);
+            color: #ff3e00;
+            border-color: #ff3e00;
+        }
+
+        /* Fullscreen toggle */
+        #fullscreen-btn {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            background-color: rgba(20, 20, 20, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 14px;
+            cursor: pointer;
+            z-index: 1001;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #fullscreen-btn:hover {
+            background-color: rgba(255, 62, 0, 0.2);
+            color: #ff3e00;
+            border-color: #ff3e00;
+        }
+
+        /* Loading state */
+        .loading-indicator {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ff3e00;
+            font-size: 48px;
+            z-index: 2000;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.4; }
+            50% { opacity: 1; }
+        }
+
+        /* Responsive scaling */
+        @media (max-width: 1400px) {
+            #slide-frame {
+                transform: scale(0.8);
+            }
+        }
+
+        @media (max-width: 1100px) {
+            #slide-frame {
+                transform: scale(0.6);
+            }
+        }
+
+        @media (max-width: 800px) {
+            #slide-frame {
+                transform: scale(0.4);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="progress-bar-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <button id="fullscreen-btn" title="Toggle Fullscreen">
+        <i class="fas fa-expand"></i>
+    </button>
+
+    <button class="help-btn" id="help-toggle" title="Keyboard Shortcuts">
+        <i class="fas fa-question"></i>
+    </button>
+
+    <div id="shortcuts-hint">
+        <h3>Keyboard Shortcuts</h3>
+        <ul>
+            <li><kbd>→</kbd> <kbd>Space</kbd> <kbd>PgDn</kbd> Next slide</li>
+            <li><kbd>←</kbd> <kbd>PgUp</kbd> Previous slide</li>
+            <li><kbd>Home</kbd> First slide</li>
+            <li><kbd>End</kbd> Last slide</li>
+            <li><kbd>F</kbd> Toggle fullscreen</li>
+            <li><kbd>?</kbd> Toggle this help</li>
+            <li><kbd>Esc</kbd> Exit fullscreen</li>
+        </ul>
+    </div>
+
+    <div id="player-container">
+        <iframe id="slide-frame" src=""></iframe>
+
+        <div id="controls">
+            <button class="control-btn" id="first-btn" title="First Slide (Home)">
+                <i class="fas fa-step-backward"></i>
+            </button>
+            <button class="control-btn" id="prev-btn" title="Previous Slide (←)">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <div id="slide-counter">1 / 51</div>
+            <button class="control-btn" id="next-btn" title="Next Slide (→)">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <button class="control-btn" id="last-btn" title="Last Slide (End)">
+                <i class="fas fa-step-forward"></i>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const TOTAL_SLIDES = 51;
+        const TRANSITION_DURATION = 300; // milliseconds
+
+        // State
+        let currentSlide = 1;
+        let isTransitioning = false;
+
+        // DOM elements
+        const slideFrame = document.getElementById('slide-frame');
+        const slideCounter = document.getElementById('slide-counter');
+        const progressBar = document.getElementById('progress-bar');
+        const controls = document.getElementById('controls');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const firstBtn = document.getElementById('first-btn');
+        const lastBtn = document.getElementById('last-btn');
+        const fullscreenBtn = document.getElementById('fullscreen-btn');
+        const helpToggle = document.getElementById('help-toggle');
+        const shortcutsHint = document.getElementById('shortcuts-hint');
+
+        // Initialize
+        function init() {
+            loadSlide(currentSlide);
+            updateUI();
+            attachEventListeners();
+            // Show controls briefly on load
+            controls.classList.add('visible');
+            setTimeout(() => controls.classList.remove('visible'), 3000);
+        }
+
+        // Load slide
+        function loadSlide(slideNumber) {
+            if (isTransitioning) return;
+            
+            slideFrame.classList.add('transitioning');
+            
+            setTimeout(() => {
+                slideFrame.src = `${slideNumber}.html`;
+                currentSlide = slideNumber;
+                updateUI();
+                
+                setTimeout(() => {
+                    slideFrame.classList.remove('transitioning');
+                }, 50);
+            }, TRANSITION_DURATION);
+        }
+
+        // Navigation functions
+        function nextSlide() {
+            if (currentSlide < TOTAL_SLIDES && !isTransitioning) {
+                loadSlide(currentSlide + 1);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1 && !isTransitioning) {
+                loadSlide(currentSlide - 1);
+            }
+        }
+
+        function firstSlide() {
+            if (currentSlide !== 1 && !isTransitioning) {
+                loadSlide(1);
+            }
+        }
+
+        function lastSlide() {
+            if (currentSlide !== TOTAL_SLIDES && !isTransitioning) {
+                loadSlide(TOTAL_SLIDES);
+            }
+        }
+
+        // Update UI
+        function updateUI() {
+            slideCounter.textContent = `${currentSlide} / ${TOTAL_SLIDES}`;
+            progressBar.style.width = `${(currentSlide / TOTAL_SLIDES) * 100}%`;
+            
+            // Update button states
+            prevBtn.disabled = currentSlide === 1;
+            firstBtn.disabled = currentSlide === 1;
+            nextBtn.disabled = currentSlide === TOTAL_SLIDES;
+            lastBtn.disabled = currentSlide === TOTAL_SLIDES;
+        }
+
+        // Event listeners
+        function attachEventListeners() {
+            // Button controls
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+            firstBtn.addEventListener('click', firstSlide);
+            lastBtn.addEventListener('click', lastSlide);
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                switch(e.key) {
+                    case 'ArrowRight':
+                    case 'PageDown':
+                    case ' ':
+                        e.preventDefault();
+                        nextSlide();
+                        break;
+                    case 'ArrowLeft':
+                    case 'PageUp':
+                        e.preventDefault();
+                        prevSlide();
+                        break;
+                    case 'Home':
+                        e.preventDefault();
+                        firstSlide();
+                        break;
+                    case 'End':
+                        e.preventDefault();
+                        lastSlide();
+                        break;
+                    case 'f':
+                    case 'F':
+                        e.preventDefault();
+                        toggleFullscreen();
+                        break;
+                    case '?':
+                        e.preventDefault();
+                        toggleHelp();
+                        break;
+                    case 'Escape':
+                        if (document.fullscreenElement) {
+                            document.exitFullscreen();
+                        }
+                        break;
+                }
+            });
+
+            // Mouse click navigation (click on sides)
+            slideFrame.addEventListener('load', () => {
+                try {
+                    const frameDoc = slideFrame.contentDocument || slideFrame.contentWindow.document;
+                    frameDoc.addEventListener('click', (e) => {
+                        const clickX = e.clientX;
+                        const frameWidth = frameDoc.documentElement.clientWidth;
+                        
+                        if (clickX < frameWidth / 3) {
+                            prevSlide();
+                        } else if (clickX > (frameWidth * 2) / 3) {
+                            nextSlide();
+                        }
+                    });
+                } catch (err) {
+                    console.log('Cannot access iframe content (cross-origin)');
+                }
+            });
+
+            // Mouse wheel navigation
+            let wheelTimeout;
+            document.addEventListener('wheel', (e) => {
+                clearTimeout(wheelTimeout);
+                wheelTimeout = setTimeout(() => {
+                    if (e.deltaY > 0) {
+                        nextSlide();
+                    } else if (e.deltaY < 0) {
+                        prevSlide();
+                    }
+                }, 50);
+            }, { passive: true });
+
+            // Touch swipe navigation
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            document.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            document.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    nextSlide();
+                }
+                if (touchEndX > touchStartX + swipeThreshold) {
+                    prevSlide();
+                }
+            }
+
+            // Fullscreen toggle
+            fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+            // Help toggle
+            helpToggle.addEventListener('click', toggleHelp);
+
+            // Update fullscreen icon
+            document.addEventListener('fullscreenchange', updateFullscreenIcon);
+        }
+
+        // Fullscreen functionality
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(err => {
+                    console.log('Error attempting to enable fullscreen:', err);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        function updateFullscreenIcon() {
+            const icon = fullscreenBtn.querySelector('i');
+            if (document.fullscreenElement) {
+                icon.className = 'fas fa-compress';
+            } else {
+                icon.className = 'fas fa-expand';
+            }
+        }
+
+        // Help toggle
+        function toggleHelp() {
+            shortcutsHint.classList.toggle('visible');
+        }
+
+        // Hide help when clicking outside
+        document.addEventListener('click', (e) => {
+            if (shortcutsHint.classList.contains('visible') && 
+                !shortcutsHint.contains(e.target) && 
+                !helpToggle.contains(e.target)) {
+                shortcutsHint.classList.remove('visible');
+            }
+        });
+
+        // Start the presentation
+        init();
+    </script>
+</body>
+</html>
