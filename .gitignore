@@ -1,0 +1,7 @@
+node_modules
+package-lock.json
+package.json
+all.html
+export_pdf.js
+generate_all.js
+slides.pdf
